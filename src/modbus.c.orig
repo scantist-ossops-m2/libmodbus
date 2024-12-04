@@ -1052,7 +1052,7 @@ int modbus_reply(modbus_t *ctx, const uint8_t *req,
                 MODBUS_EXCEPTION_ILLEGAL_DATA_VALUE, rsp);
         } else if (mapping_address < 0 ||
                    (mapping_address + nb) > mb_mapping->nb_registers ||
-                   mapping_address_write < 0 ||
+                   mapping_address < 0 ||
                    (mapping_address_write + nb_write) > mb_mapping->nb_registers) {
             if (ctx->debug) {
                 fprintf(stderr,
